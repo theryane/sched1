@@ -1,0 +1,199 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Upload Section */
+.upload-section {
+    border: 2px dashed #bdc3c7;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.upload-section.drag-over {
+    border-color: #3498db;
+    background-color: #ebf5fb;
+}
+
+/* Buttons */
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Status and Preview sections */
+#status {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 4px;
+    display: none;
+}
+
+#status.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#status.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+#preview {
+    margin-top: 2rem;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 4px;
+    display: none;
+}
+
+#preview.active {
+    display: block;
+}
+
+/* Loading indicator */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tab styling */
+.tab-container {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    color: #666;
+}
+
+.tab.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Table styling */
+.data-table, .hierarchy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table th, .hierarchy-table th,
+.data-table td, .hierarchy-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.data-table th, .hierarchy-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.hierarchy-table .main-activity {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.hierarchy-table .sub-activity {
+    background-color: white;
+    padding-left: 30px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
